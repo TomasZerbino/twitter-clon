@@ -1,11 +1,12 @@
-const db = require("./models");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-module.exports = async () => {
-  // Crear tablas:
-  await db.sequelize.sync({ force: true });
-  console.log("[Database] ¡Las tablas fueron creadas!");
+mongoose.connect("mongodb://localhost/db-clone-twitter");
+mongoose.connection
+  .once("open", () => console.log("Conexión con la base de datos establecida"))
+  .on("error", (error) => console.log(error));
 
-  // Ejecutar seeders (datos de prueba):
-  await require("./seeders/articleSeeder")();
-  console.log("[Database] ¡Los datos de prueba fueron insertados!");
+module.exports = {
+  mongoose,
+  Schema,
 };

@@ -1,8 +1,8 @@
-const { Article } = require("../models");
+const { Tweets} = require("../models");
 
 async function showHome(req, res) {
-  const articles = await Article.findAll();
-  res.render("home", { articles });
+  const tweets = await Tweet.findAll();
+  res.render("home", { tweets });
 }
 
 async function showContact(req, res) {

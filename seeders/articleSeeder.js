@@ -1,18 +1,18 @@
-const { faker } = require("@faker-js/faker");
-const { Article } = require("../models");
+// const { faker } = require("@faker-js/faker");
+// const { Tweet } = require("../models");
 
-faker.locale = "es";
+// faker.locale = "es";
 
-module.exports = async () => {
-  const articles = [];
+// module.exports = async () => {
+//   const tweets = [];
 
-  for (let i = 0; i < 3000; i++) {
-    articles.push({
-      title: faker.lorem.sentence(5),
-      content: faker.lorem.paragraphs(),
-    });
-  }
+//   for (let i = 0; i < 3000; i++) {
+//     tweets.push({
+//       title: faker.lorem.sentence(5),
+//       content: faker.lorem.paragraphs(),
+//     });
+//   }
 
-  await Article.bulkCreate(articles);
-  console.log("[Database] Se corrió el seeder de Articles.");
-};
+//   await Tweet.bulkCreate(tweets);
+//   console.log("[Database] Se corrió el seeder de Tweets.");
+// };
