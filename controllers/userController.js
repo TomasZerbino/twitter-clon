@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const User = require("../models/User");
 
 // Display a listing of the resource.
 async function index(req, res) {}
@@ -7,7 +7,17 @@ async function index(req, res) {}
 async function show(req, res) {}
 
 // Show the form for creating a new resource
-async function create(req, res) {}
+async function create(req, res) {
+  const newUser = new User({
+    firstname: "Lucas",
+    lastname: "Ramirez",
+    email: "luquitas@gmail.com",
+    username: "luquitas54",
+    password: "hola",
+  });
+  await newUser.save();
+  return res.json(newUser);
+}
 
 // Store a newly created resource in storage.
 async function store(req, res) {}
