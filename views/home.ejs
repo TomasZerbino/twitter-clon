@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS de Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS de FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+
+    <!-- CSS de Animate -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- CSS Propio -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- CSS de fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+        <div class="container d-flex flex-wrap homeContainer">
+
+        <%- include('./partials/navbar') %>   
+
+        <section class="sectionHome ms-1">
+          <div class="homeCenterContainer">
+          <div class="cardsContainer">
+              <h1 class="homeTitle">Home</h1>
+              <div class="d-flex">
+                  <div class="homeProfileImg">
+                      <img class="" src="./img/profileHome.svg" alt="">
+                  </div>
+                  <div class="form-floating">
+                      <textarea class="form-control tweetTextarea mx-1" placeholder="a" id="floatingTextarea2" style="height: 100px"></textarea>
+                      <label for="floatingTextarea2" style="color: #647788;">What's happening?</label>
+                  </div>
+                  <div class="btnTweet">
+                      <button>Tweet</button>
+                  </div>
+              </div>
+          </div>
+          <div class="d-flex flex-wrap cardsContainer">
+              <div class="tweetProfileImg">
+                  <img src="./img/profileHome.svg" alt="">
+              </div>
+              <div class="tweet">
+                  <div class="d-flex">
+                      <p class="tweetUsername">Pepe Milanga</p> <p class="tweetNikname">@pepemilanga</p> <span class="ps-2">. 6h</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                       Mollitiaaa aliquid ad recusandae illum. Doloribus maiores
+                        beatae sequi voluptatum veritatis harum magnam pariatur.
+                  </p>
+                  <div>
+                      <img src="./img/like.svg" alt="">
+                      <span>120</span>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </section>
+
+        <%- include('./partials/sidebar') %> 
+
+        </div>
+
+    
+    <!-- JS de Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS Propio -->
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -32,7 +32,7 @@ async function create(req, res) {
       });
     }
   } else {
-    console.log("Este usuario ya existe.");
+    req.flash("user", "Este usuario ya existe");
     res.redirect("back");
   }
 }

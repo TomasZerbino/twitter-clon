@@ -8,9 +8,15 @@ const methodOverride = require("method-override");
 const app = express();
 const flash = require("connect-flash");
 const passport = require("./config/passport-local");
+const session = require('express-session')
 
 passport(app)
 
+app.use(flash());
+app.use(session({secret: "something",
+                  cookie: { maxAge: 60000 },
+                  resave: true,
+                  saveUninitialized: true,}))
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,7 +25,7 @@ app.set("view engine", "ejs");
 
 routes(app);
 
-dbInitialSetup();
+/* dbInitialSetup(); */
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);

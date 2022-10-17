@@ -39,11 +39,11 @@ module.exports = (app) => {
   );
 
   passport.serializeUser((user, done) => {
-    done(null, user._id);
+    done(null, user.id);
   });
 
   passport.deserializeUser((id, done) => {
-    User.findById(_id)
+    User.findById(id)
       .then((user) => {
         done(null, user); // req.user
       })
