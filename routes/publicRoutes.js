@@ -9,6 +9,8 @@ publicRouter.get("/login", userController.login)
 
 publicRouter.get("/register", userController.register)
 
+publicRouter.post('/register', userController.create)
+
 publicRouter.get("/user/create", userController.create);
 
 

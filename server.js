@@ -6,6 +6,10 @@ const { dbInitialSetup } = require("./dbInitialSetup");
 const APP_PORT = process.env.APP_PORT;
 const methodOverride = require("method-override");
 const app = express();
+const flash = require("connect-flash");
+const passport = require("./config/passport-local");
+
+passport(app)
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
