@@ -224,7 +224,7 @@ i{
     color: #ffffff;
   }
   
-  @media (max-width: 1199px) {
+  @media (max-width: 1198px) {
     .card{
       display: none;
     }
@@ -389,7 +389,8 @@ i{
     border-bottom: 1px solid #F3F3F3;
 }
 .homeCenterContainer{
-    max-width: 600px;
+    margin-left: 31px;
+    width: 600px;
     min-height: 100vh;
     border-left: 1px solid #F3F3F3;
     border-right: 1px solid #F3F3F3;
@@ -555,4 +556,4 @@ i{
         justify-content: center;
     }
 }
-/* -----------------------------------Home-Perfil Tomas ☝*/
+/* -----------------------------------Home Tomas ☝*/
