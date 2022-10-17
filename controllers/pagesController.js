@@ -5,6 +5,10 @@ async function showHome(req, res) {
   res.render("home");
 }
 
+async function showProfile(req, res) {
+  res.render("profile");
+}
+
 async function showContact(req, res) {
   res.render("contact");
 }
@@ -18,6 +22,7 @@ async function showAboutUs(req, res) {
 
 module.exports = {
   showHome,
+  showProfile,
   showContact,
   showAboutUs,
 };
