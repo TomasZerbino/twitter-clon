@@ -5,6 +5,12 @@ const userController = require("../controllers/userController");
 // Rutas Públicas:
 // ...
 
+publicRouter.get("/login", userController.login)
+
+publicRouter.get("/register", userController.register)
+
 publicRouter.get("/user/create", userController.create);
+
+
 
 module.exports = publicRouter;
