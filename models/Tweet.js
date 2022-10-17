@@ -3,11 +3,15 @@ const { mongoose, Schema } = require("../dbInitialSetup");
 const tweetSchema = new Schema(
   {
     content: String,
-    // likes: [ObjectId],
     author: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    likes: [{
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+    ]
   },
   { timestamps: true },
 );

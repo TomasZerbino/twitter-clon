@@ -9,10 +9,9 @@ mongoose.connection
 
 async function dbInitialSetup() {
   await require("./seeders/userSeeder")();
-  console.log("[Database] ¡Los datos de prueba fueron insertados!");
 
   await require("./seeders/tweetSeeder")();
-  console.log("[Database] ¡Los datos de prueba fueron insertados!");
+
 }
 
 module.exports = {
