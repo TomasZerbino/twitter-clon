@@ -4,45 +4,35 @@ const { mongoose } = require("mongoose");
 const User = require("../models/User");
 
 module.exports = async () => {
-/*  await mongoose.connection.dropDatabase(); */
-    const tweets = [];
-    
-  
-    const users = await User.find();
+  /*  await mongoose.connection.dropDatabase(); */
+  const tweets = [];
 
-    for (let i = 0; i < 300; i++) {
-      const randomUser = users[faker.datatype.number({min:0,max:users.length-1})]
-      
-      let qtyLikes = users[faker.datatype.number({min:0,max:users.length-1})]
+  const users = await User.find();
 
-      const tweet = new Tweet({
-        content: faker.lorem.sentence(5),
-        author: randomUser
-      });
+  for (let i = 0; i < 300; i++) {
+    const randomUser = users[faker.datatype.number({ min: 0, max: users.length - 1 })];
 
-      for(let i = 0; i < qtyLikes; i++ ){
-        let random = users[faker.datatype.number({min:0,max:users.length-1})];
-        while( tweet.likes.find((element) => element._id === random._id) ){
-          random = users[faker.datatype.number({min:0,max:users.length-1})];
-        }
-        tweet.likes.push(random._id)
+    let qtyLikes = faker.datatype.number({ min: 0, max: users.length - 1 });
+    const tweet = new Tweet({
+      content: faker.lorem.sentence(5),
+      author: randomUser,
+    });
+
+    for (let i = 0; i < qtyLikes; i++) {
+      let random = users[faker.datatype.number({ min: 0, max: users.length - 1 })];
+
+      while (tweet.likes.find((element) => element._id === random._id)) {
+        random = users[faker.datatype.number({ min: 0, max: users.length - 1 })];
       }
-
-      tweets.push(tweet)
-      randomUser.tweets.push(tweet)
-      await randomUser.save()
       
-      /* let random = faker.datatype.number({min:0,max:users.length-1});
-      for(let i = 0; i < users.length; i++){
-          
-          likes.push(user._id)
-        }
-      } */
-
-      
+      tweet.likes.push(random._id);
     }
 
-  
-    await Tweet.insertMany(tweets);
-    console.log("[Database] Se corrió el seeder de Tweets.");
-  };
+    tweets.push(tweet);
+    randomUser.tweets.push(tweet);
+    await randomUser.save();
+  }
+
+  await Tweet.insertMany(tweets);
+  console.log("[Database] Se corrió el seeder de Tweets.");
+};
