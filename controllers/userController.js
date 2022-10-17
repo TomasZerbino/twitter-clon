@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const flash = require("connect-flash");
 
 // Display a listing of the resource.
 async function login(req, res) {
@@ -14,15 +15,26 @@ async function show(req, res) {}
 
 // Show the form for creating a new resource
 async function create(req, res) {
-  const newUser = new User({
-    firstname: "Lucas",
-    lastname: "Ramirez",
-    email: "luquitas@gmail.com",
-    username: "luquitas54",
-    password: "hola",
-  });
-  await newUser.save();
-  return res.json(newUser);
+
+  const userAutentication = await User.findOne({ email: req.body.email });
+  console.log(userAutentication);
+  if (!userAutentication) {
+    const userCreated = await User.create({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password,
+    });
+    if (userCreated) {
+      req.login(userCreated, function () {
+        res.redirect("/login");
+      });
+    }
+  } else {
+    req.flash("user", "Este usuario ya existe");
+    res.redirect("back");
+  }
 }
 
 // Store a newly created resource in storage.
