@@ -92,7 +92,10 @@
     width: 40%;
     border: 1px solid rgb(182, 180, 180);
 } */
-
+.followContainer{
+    width: 600px;
+    margin-left: 31px;
+}
 .user{
     display: flex;
     margin-top: 1rem;
@@ -136,8 +139,6 @@ i{
 .smallUser{
     font-weight: bold;
 }
-
-
 
 .btnActivo{
     border-bottom: 2px solid #0087e1;

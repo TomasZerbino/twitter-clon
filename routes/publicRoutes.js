@@ -7,6 +7,8 @@ const pagescontroller = require("../controllers/pagesController");
 // ...
 publicRouter.get("/", pagescontroller.showHome);
 
+publicRouter.get("/profile", pagescontroller.showProfile);
+
 publicRouter.get("/login", userController.login);
 
 publicRouter.get("/register", userController.register);
