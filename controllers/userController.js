@@ -2,11 +2,11 @@ const User = require("../models/User");
 
 // Display a listing of the resource.
 async function login(req, res) {
-  res.render('login')
+  res.render("login");
 }
 
 async function register(req, res) {
-  res.render('register')
+  res.render("register");
 }
 
 // Display the specified resource.
@@ -41,7 +41,7 @@ async function destroy(req, res) {}
 // ...
 
 module.exports = {
-  index,
+  // index,
   register,
   login,
   show,
