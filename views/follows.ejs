@@ -62,11 +62,7 @@
           <% for (follower of followers) { %>
           <div class="d-flex align-items-center justify-content-between mb-3">
             <div class="d-flex">
-              <img
-                src="<%= follower.avatar %>"
-                class="avatarImg"
-                alt=""
-              />
+              <img src="<%= follower.avatar %>" class="avatarImg" alt="" />
 
               <span class="d-flex flex-column spanAvatar">
                 <small class="smallUser fs-6"
@@ -91,6 +87,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
+      );
+    </script>
     <!-- JS Propio -->
     <script src="/app.js"></script>
   </body>

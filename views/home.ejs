@@ -56,8 +56,10 @@
                   class="rounded-circle"
                   <% if (!user.avatar) { %> 
                   src='img/profileHome.svg' 
-                  <% } else { %> 
+                  <% } else if (user.avatar.includes('http') ) { %> 
                   src="<%= user.avatar %>" 
+                  <% } else { %>
+                    src="img/<%= user.avatar %>" 
                   <% } %>
                     />
                 </div>

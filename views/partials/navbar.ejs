@@ -125,11 +125,13 @@
           data-bs-content="<a class='text-danger' href='/logout'>Logout @<%= user.username %></a>"
         >
           <img
-          <% if (!user.avatar) { %>
-            src='img/profileHome.svg'
-            <% } else { %> 
-            src="<%= user.avatar %>"
-            <% } %> 
+          <% if (!user.avatar) { %> 
+            src='img/profileHome.svg' 
+            <% } else if (user.avatar.includes('http') ) { %> 
+            src="<%= user.avatar %>" 
+            <% } else { %>
+              src="img/<%= user.avatar %>" 
+            <% } %>
             alt="avatar"
             width="45"
             height="45"
@@ -147,3 +149,4 @@
     </div>
   </section>
 </div>
+
