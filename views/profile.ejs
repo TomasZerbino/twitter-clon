@@ -48,25 +48,49 @@
         <div class="profileInfo">
           <div class="witheBorder"></div>
           <div class="ProfileImg">
-            <img src="./img/sheli.jpg" alt="" />
+            <img src="<%= user.avatar %> " alt="" />
           </div>
           <div class="profileFollowBtn">
             <button>Follow</button>
           </div>
           <div>
-            <h1 class="fs-4 fw-bolder m-0">Sheldon Cooper</h1>
+            <h1 class="fs-4 fw-bolder m-0"><%=user.firstname%> <%=user.lastname%></h1>
             <div class="d-flex justify-content-between">
               <div>
-                <p>@bazinga73</p>
+                <p>@<%=user.username%></p>
               </div>
               <div class="d-flex">
-                <p class="follows"><span>33</span> Following</p>
-                <p class="follows"><span>137</span> Followers</p>
+                <p class="follows"><span><%=user.following.length%></span> Following</p>
+                <p class="follows"><span><%=user.followers.length%></span> Followers</p>
               </div>
             </div>
           </div>
           <p class="fw-bolder">Tweets</p>
-          <div class="tweetsUnderline"></div>
+          <% for(tweet of tweets){%> 
+          <div class="tweet m-4">
+            <div class="d-flex">
+              <p class="tweetUsername"><%=user.firstname%> <%=user.lastname%> </p>
+              <p class="tweetNikname">@<%=user.username%></p>
+            </div>
+            <p>
+                <%=tweet.content%>
+            </p>
+            <div class="d-flex align-item-center justify-content-between">
+              <span class="d-flex">
+                  <img class="ml-2" src="./img/like.svg" alt="" />
+                  <small class="fs-6 m-1 text-danger"><%=tweet.likes.length%></small>
+              </span>
+              <span>
+                <small class="p-1"><%=tweet.createdAt.toLocaleDateString()%></small>
+                <form action="/profile/<%= tweet._id %>?_method=DELETE" method="post">
+                  <button class="likeBtn">
+                    <i class="fa-solid fa-trash text-danger"></i>
+                  </button>
+                </form>
+              </span>
+            </div>
+          </div>
+          <% } %> 
         </div>
       </div>
       <%- include('./partials/sidebar') %>

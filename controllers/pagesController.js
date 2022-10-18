@@ -14,7 +14,10 @@ async function showHome(req, res) {
 }
 
 async function showProfile(req, res) {
-  res.render("profile");
+  const tweets = await Tweet.find({ author: { $in: [req.user._id] } }).limit(20);
+  res.render("profile", {
+    tweets,
+  });
 }
 
 async function showContact(req, res) {

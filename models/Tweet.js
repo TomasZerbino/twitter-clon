@@ -10,10 +10,11 @@ const tweetSchema = new Schema(
     likes: [
       {
         type: Schema.Types.ObjectId,
-        maxLength: [140, "Maximo 140"],
+        maxLength: 140,
         ref: "User",
       },
     ],
+    createdAt: Date,
   },
   { timestamps: true },
 );

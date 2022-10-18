@@ -4,3 +4,4 @@ function makeUserAvailableInViews(req, res, next) {
 }
 
 module.exports = makeUserAvailableInViews;
+  

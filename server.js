@@ -6,7 +6,7 @@ const { dbInitialSetup } = require("./dbInitialSetup");
 const APP_PORT = process.env.APP_PORT;
 const methodOverride = require("method-override");
 const app = express();
-const flash = require("connect-flash");
+const flash = require("express-flash");
 const passport = require("./config/passport-local");
 const session = require("express-session");
 
@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 
 routes(app);
 
-// dbInitialSetup();
+/* dbInitialSetup(); */
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);

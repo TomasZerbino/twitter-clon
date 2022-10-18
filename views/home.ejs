@@ -49,19 +49,30 @@
             <div class="cardsContainer">
               <h1 class="homeTitle">Home</h1>
               <div class="d-flex">
-                  <div class="homeProfileImg">
-                      <img class="" src="./img/profileHome.svg" alt="">
-                  </div>
-                  <form class="d-flex" method="post">
-                    <div class="form-floating">
-                        <textarea class="form-control tweetTextarea mx-1" name="content" placeholder="a" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="content" style="color: #647788;">What's happening?</label>
-                    </div>
-                    <div class="btnTweet">
-                        <button type="submit">Tweet</button>
-                    </div>
-                  </form>
-
+                <div class="">
+                  <img 
+                  width="52"
+                  height="52"
+                  class="rounded-circle"
+                  <% if (!user.avatar) { %> 
+                  src='img/profileHome.svg' 
+                  <% } else { %> 
+                  src="<%= user.avatar %>" 
+                  <% } %>
+                    />
+                </div>
+                <div class="form-floating">
+                  <textarea
+                    class="form-control tweetTextarea mx-1"
+                    placeholder="a"
+                    id="floatingTextarea2"
+                    style="height: 100px"
+                  ></textarea>
+                  <label for="floatingTextarea2" style="color: #647788">What's happening?</label>
+                </div>
+                <div class="btnTweet">
+                  <button>Tweet</button>
+                </div>
               </div>
             </div>
             <% for( tweet of tweets){ %>
@@ -118,6 +129,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
+      );
+    </script>
     <!-- JS Propio -->
     <script src="/app.js"></script>
   </body>
