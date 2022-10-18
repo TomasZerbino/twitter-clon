@@ -56,25 +56,29 @@
                   class="rounded-circle"
                   <% if (!user.avatar) { %> 
                   src='img/profileHome.svg' 
-                  <% } else if (user.avatar.includes('http') ) { %> 
+                  <% } else { %> 
                   src="<%= user.avatar %>" 
-                  <% } else { %>
-                    src="img/<%= user.avatar %>" 
                   <% } %>
                     />
                 </div>
-                <div class="form-floating">
-                  <textarea
+                <div >
+                  <form action="/" class="form-floating d-flex"method="post">
+                    <textarea
+                    name="content"
                     class="form-control tweetTextarea mx-1"
                     placeholder="a"
                     id="floatingTextarea2"
                     style="height: 100px"
                   ></textarea>
-                  <label for="floatingTextarea2" style="color: #647788">What's happening?</label>
+                  <label for="content" style="color: #647788">What's happening?</label>
+                  <div class="btnTweet">
+                    <button>Tweet</button>
+                  </div>
+                  </form>
+                    
+                 
                 </div>
-                <div class="btnTweet">
-                  <button>Tweet</button>
-                </div>
+
               </div>
             </div>
             <% for( tweet of tweets){ %>
