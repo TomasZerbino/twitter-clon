@@ -1,3 +1,4 @@
+const { pluralize } = require("mongoose");
 const Tweet = require("../models/Tweet");
 const User = require("../models/Tweet");
 // Display a listing of the resource.
@@ -8,7 +9,13 @@ async function show(req, res) {}
 
 // Show the form for creating a new resource
 async function create(req, res) {
-  console.log(req.user);
+  await Tweet.create({
+    content: req.body.content,
+    author: req.user._id,
+    likes: [],
+  });
+
+  await res.redirect("/");
 }
 
 // Store a newly created resource in storage.

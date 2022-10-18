@@ -1,9 +1,16 @@
-const Tweets = require("../models/Tweet");
+const Tweet = require("../models/Tweet");
 
 async function showHome(req, res) {
-  // const tweets = await Tweet.findAll();
-  res.render("home");
-  console.log(req.isAuthenticated());
+  if (req.isAuthenticated()) {
+    const tweets = await Tweet.find({ author: { $in: [req.user.following, req.user._id] } })
+      .populate("author")
+      .sort({ createdAt: -1 })
+      .limit(20);
+    res.render("home", { tweets, req });
+  } else {
+    const tweets = await Tweet.find().populate("author").sort({ createdAt: -1 }).limit(20);
+    res.render("home", { tweets, req });
+  }
 }
 
 async function showProfile(req, res) {

@@ -1,6 +1,7 @@
 const passport = require("passport");
 const session = require("express-session");
 const LocalStrategy = require("passport-local");
+const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 
 module.exports = (app) => {
@@ -27,7 +28,9 @@ module.exports = (app) => {
         return done(null, false, { message: "Credenciales incorrectas" });
       }
 
-      if (user.password !== password) {
+      const storedHash = user.password;
+      const checkPassword = await bcrypt.compare(password, storedHash);
+      if (!checkPassword) {
         return done(null, false, { message: "Credenciales incorrectas" });
       }
 

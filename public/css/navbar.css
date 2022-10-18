@@ -1,10 +1,10 @@
-.centered {
-  position: fixed; /* or absolute */
+/* .centered {
+  position: fixed; 
   top: 50%;
   left: 50%;
-}
+} */
 
-.userNameProf {
+/* .userNameProf {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -12,9 +12,9 @@
   line-height: 19px;
 
   color: #000000;
-}
+} */
 
-.userEmail {
+/* .userEmail {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -72,10 +72,10 @@
 .twitterBird {
   color: #1d9bf0;
   font-size: 30px;
-}
+} */
 
 /* TAMAÑO MOBILE */
-
+/* 
 @media (max-width: 991px) {
   .hideOver1920 {
     display: none;
@@ -122,10 +122,10 @@
     margin-bottom: 1.2rem;
     margin-left: 1.5rem;
   }
-}
+} */
 
 /* TAMAÑO TABLET */
-@media (min-width: 1920px) {
+/* @media (min-width: 1920px) {
   .btnNavBar {
     border-radius: 45px;
     margin-top: 1.8rem;
@@ -167,15 +167,15 @@
   .ellipsis {
     margin-left: 1rem;
   }
-}
+} */
 
 /* TAMAÑO LAPTOP */
-@media (min-width: 1200px) {
-}
+/* @media (min-width: 1200px) {
+} */
 
 /* TAMAÑO MONITOR */
-@media (min-width: 1400px) {
-}
+/* @media (min-width: 1400px) {
+} */
 
 /* bootstrap breakpoints:
     xs: 0,

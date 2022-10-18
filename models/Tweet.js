@@ -7,11 +7,13 @@ const tweetSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
-    likes: [{
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-    ]
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        maxLength: [140, "Maximo 140"],
+        ref: "User",
+      },
+    ],
   },
   { timestamps: true },
 );

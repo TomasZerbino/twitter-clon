@@ -13,17 +13,6 @@ const session = require("express-session");
 passport(app);
 
 app.use(flash());
-<<<<<<< HEAD
-
-app.use(
-  session({
-    secret: "987654",
-    resave: false,
-    saveUninitialized: false,
-  }),
-);
-
-=======
 app.use(
   session({
     secret: "something",
@@ -32,7 +21,6 @@ app.use(
     saveUninitialized: true,
   }),
 );
->>>>>>> 1c763aeacba4b1626f4eb2cff82e2d59dd6df2cb
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
