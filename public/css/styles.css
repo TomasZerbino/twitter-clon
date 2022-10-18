@@ -905,11 +905,17 @@ i {
   .form {
     border-radius: 1rem;
   }
+  #sidebar {
+    display: none;
+  }
 }
 
 @media (max-width: 1200px) {
   .homeContainer {
     justify-content: center;
+  }
+  .hideLess1298 {
+    display: none;
   }
 }
 /* -----------------------------------Home Tomas ☝*/
