@@ -304,6 +304,7 @@ i {
   font-size: 30px;
   padding: 0;
   margin-bottom: 37px;
+  margin-left: 0.8rem;
 }
 
 .feather {
@@ -336,6 +337,7 @@ i {
   .twitterBird {
     justify-content: center;
     width: 52px;
+    margin-left: 0rem;
   }
   .btnNavBarSmall {
     display: flex;
@@ -661,6 +663,7 @@ i {
   .twitterBird {
     justify-content: center;
     width: 52px;
+    
   }
   .btnNavBarSmall {
     display: flex;
