@@ -48,7 +48,14 @@
         <div class="profileInfo">
           <div class="witheBorder"></div>
           <div class="ProfileImg">
-            <img src="<%= user.avatar %> " alt="" />
+            <img 
+            <% if (!user.avatar) { %> 
+              src='img/profileHome.svg' 
+              <% } else if (user.avatar.includes('http') ) { %> 
+              src="<%= user.avatar %>" 
+              <% } else { %>
+                src="img/<%= user.avatar %>" 
+              <% } %> alt="" />
           </div>
           <div class="profileFollowBtn">
             <button>Follow</button>
