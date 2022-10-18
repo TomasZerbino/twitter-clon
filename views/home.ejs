@@ -83,8 +83,19 @@
             </div>
             <% for( tweet of tweets){ %>
               <div class="d-flex flex-wrap cardsContainer">
-                <div class="tweetProfileImg">
-                  <img src="./img/profileHome.svg" alt="" />
+                <div class="">
+                  <img 
+                  <% if (!tweet.author.avatar) { %> 
+                    src='img/profileHome.svg' 
+                    <% } else if (tweet.author.avatar.includes('http') ) { %> 
+                    src="<%= tweet.author.avatar %>" 
+                    <% } else { %>
+                      src="img/<%= tweet.author.avatar %>" 
+                    <% } %> 
+                    alt="avatar"
+                    width="45"
+                    height="45"
+                    class="rounded-circle tweetProfileImg" />
                 </div>
                 <div class="tweet">
                   <div class="d-flex">
