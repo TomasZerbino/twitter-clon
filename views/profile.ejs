@@ -60,25 +60,27 @@
                 <p>@<%=user.username%></p>
               </div>
               <div class="d-flex">
-                <p class="follows"><span><%=user.following.length%></span> Following</p>
-                <p class="follows"><span><%=user.followers.length%></span> Followers</p>
+                <a href="/follows" class="links"
+                  ><p class="follows"><span><%=user.following.length%></span> Following</p></a
+                >
+                <a href="/follows" class="links"
+                  ><p class="follows"><span><%=user.followers.length%></span> Followers</p></a
+                >
               </div>
             </div>
           </div>
           <p class="fw-bolder">Tweets</p>
-          <% for(tweet of tweets){%> 
+          <% for(tweet of tweets){%>
           <div class="tweet m-4">
             <div class="d-flex">
-              <p class="tweetUsername"><%=user.firstname%> <%=user.lastname%> </p>
+              <p class="tweetUsername"><%=user.firstname%> <%=user.lastname%></p>
               <p class="tweetNikname">@<%=user.username%></p>
             </div>
-            <p>
-                <%=tweet.content%>
-            </p>
+            <p><%=tweet.content%></p>
             <div class="d-flex align-item-center justify-content-between">
               <span class="d-flex">
-                  <img class="ml-2" src="./img/like.svg" alt="" />
-                  <small class="fs-6 m-1 text-danger"><%=tweet.likes.length%></small>
+                <img class="ml-2" src="./img/like.svg" alt="" />
+                <small class="fs-6 m-1 text-danger"><%=tweet.likes.length%></small>
               </span>
               <span>
                 <small class="p-1"><%=tweet.createdAt.toLocaleDateString()%></small>
@@ -90,7 +92,7 @@
               </span>
             </div>
           </div>
-          <% } %> 
+          <% } %>
         </div>
       </div>
       <%- include('./partials/sidebar') %>
