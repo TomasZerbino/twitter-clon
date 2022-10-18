@@ -1,116 +1,39 @@
-<div class="col-2 hideOver1298">
-  <div class="row">
-    <div class="col-3 col-lg-6"></div>
-    <div class="col-9 col-lg-6">
-      <section id="SIDEBARSMALL">
-        <div class="d-flex flex-column align-items-center px-3 pt-2 min-vh-100">
-          <ul
-            class="nav nav-pills flex-column mb-auto align-items-start d-block w-lg-100"
-            id="menu"
-          >
-            <li>
-              <a href="/" class="nav-link px-0 twitterBird">
-                <span class=""><i class="fa-brands fa-twitter twitterBird"></i></span>
-              </a>
-            </li>
-            <li>
-              <a href="/" class="nav-link px-0 hideLess1298 linkNavBar1">
-                <span class="homeNavBar"> <i class="fa-solid fa-house home"></i> Home</span>
-              </a>
-              <a href="/" class="nav-link px-0 align-middle hideOver1298 linkNavBar1">
-                <span class="homeNavBar"> <i class="fa-solid fa-house home"></i></span>
-              </a>
-            </li>
-            <li>
-              <a href="/profile" class="nav-link px-0 align-middle hideLess1298 linkNavBar2">
-                <span class="d-none d-sm-inline homeNavBar"
-                  ><i class="fa-regular fa-user profile"></i> Profile</span
-                ></a
-              >
-              <a href="/profile" class="nav-link px-0 align-middle hideOver1298 linkNavBar2">
-                <span class="homeNavBar"> <i class="fa-regular fa-user profile"></i></span>
-              </a>
-            </li>
-            <li>
-              <a href="/" class="btn btn-lg align-middle text-center btnNavBar" type="button">
-                <span class="align-middle tweetNavBar">Tweet</span>
-              </a>
-              <a href="/" class="btn text-center align-middle hideOver1298 btnNavBar2">
-                <img class="feather" src="img/Vector (1).svg" alt="feather" />
-              </a>
-            </li>
-          </ul>
-
-          <div class="pb-5">
-            <div
-              class="d-flex align-items-center text-decoration-none"
-              id=""
-              tabindex="0"
-              class="btn btn-lg btn-danger"
-              data-bs-toggle="popover"
-              data-bs-trigger="click"
-              data-bs-container="body"
-              data-bs-html="true"
-              data-bs-placement="top"
-              data-bs-content="<a class='text-danger' href='/Logout'>Logout Username</a>"
-            >
-              <img
-                src="https://github.com/mdo.png"
-                alt="avatar"
-                width="55"
-                height="55"
-                class="rounded-circle"
-              />
-              <div class="hideLess1298">
-                <span class="d-none d-sm-block mx-3 userName">Leia</span>
-                <span class="d-none d-sm-block mx-3 userEmail">@princesaleia</span>
-              </div>
-              <span class="ellipsis hideLess1298"><i class="fa-solid fa-ellipsis"></i></span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-</div>
-
-<div class="col-2 hideLess1298">
-  <section id="SIDEBARBIG">
-    <div class="d-flex flex-column align-items-center px-3 pt-2 min-vh-100">
-      <ul class="nav nav-pills flex-column mb-auto align-items-start d-block w-lg-100" id="menu">
+<section id="sidebar">
+  <div class="container-fluid navbarContainer px-0">
+    <div class="d-flex flex-column align-items-center pt-2 min-vh-100">
+      <ul class="d-flex  nav nav-pills flex-column mb-auto align-items-start w-lg-100" id="menu">
         <li>
-          <a href="/" class="nav-link px-0 twitterBird">
-            <span><i class="fa-brands fa-twitter twitterBird"></i></span>
+          <a href="" class="d-flex nav-link px-0 twitterBird">
+            <img src="../../img/twitter-logo.svg" alt="">
           </a>
         </li>
         <li>
-          <a href="/" class="nav-link px-0 hideLess1298 linkNavBar1">
-            <span class="homeNavBar"> <i class="fa-solid fa-house home"></i> Home</span>
+          <a href="" class="align-items-center justify-content-between nav-link px-0 linkNavBar">
+            <img src="./img/home.svg" alt=""><span class="homeNavBar">Home</span>
           </a>
-          <a href="/" class="nav-link px-0 align-middle hideOver1298 linkNavBar1">
-            <span class="homeNavBar"> <i class="fa-solid fa-house home"></i></span>
-          </a>
-        </li>
-        <li>
-          <a href="/profile" class="nav-link px-0 align-middle hideLess1298 linkNavBar2">
-            <span class="d-none d-sm-inline homeNavBar"
-              ><i class="fa-regular fa-user profile"></i> Profile</span
-            ></a
-          >
-          <a href="/profile" class="nav-link px-0 align-middle hideOver1298 linkNavBar2">
-            <span class="homeNavBar"> <i class="fa-regular fa-user profile"></i></span>
+          <a href="" class="nav-link px-0 py-0 linkNavBarSmall">
+            <img src="./img/home.svg" alt="">
           </a>
         </li>
         <li>
-          <a href="/" class="btn btn-lg align-middle text-center btnNavBar" type="button">
+          <a href="" class="align-items-center justify-content-between nav-link px-0 linkNavBar">
+            <img src="./img/profile.svg" alt=""><span class="homeNavBar">Profile</span>
+          </a>
+          <a href=""class="nav-link px-0 py-0 linkNavBarSmall">
+            <img src="./img/profile.svg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="" class="btn align-middle text-center btnNavBar" type="button">
             <span class="align-middle tweetNavBar">Tweet</span>
           </a>
-          <a href="/" class="btn text-center align-middle hideOver1298 btnNavBar2">
-            <img class="feather" src="img/Vector (1).svg" alt="feather" />
+          <a href="" class="btn text-center align-items-center btnNavBarSmall" type="button">
+            <img class="feather" src="img/Vector (1).svg" alt="feather"/>
           </a>
         </li>
       </ul>
 
+      <% if(user){ %> 
       <div class="pb-5">
         <div
           class="d-flex align-items-center text-decoration-none"
@@ -143,10 +66,11 @@
             >
             <span class="d-none d-sm-block mx-3 userEmail">@<%= user.username %></span>
           </div>
-          <span class="ellipsis hideLess1298"><i class="fa-solid fa-ellipsis"></i></span>
+          
+          <span class="ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
         </div>
       </div>
+      <% } %> 
     </div>
-  </section>
-</div>
-
+  </div>
+</section> 

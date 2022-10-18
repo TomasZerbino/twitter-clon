@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const Tweet = require("../models/Tweet");
 const formidable = require("formidable");
 
 // Display a listing of the resource.
@@ -39,7 +40,18 @@ async function create(req, res) {
   //   }
   // }
 }
-
+// Update the specified resource in storage.
+async function update(req, res) {
+  const tweet = await Tweet.findById(req.params.id);
+  if (tweet.likes.includes(req.user._id)) {
+    const liked = tweet.likes.indexOf(req.user._id);
+    tweet.likes.splice(liked, 1);
+  } else {
+    tweet.likes.push(req.user._id);
+  }
+  await tweet.save();
+  res.redirect("/");
+}
 // Store a newly created resource in storage.
 async function store(req, res) {
   const form = formidable({
@@ -89,9 +101,6 @@ async function showFollowers(req, res) {
 
 // Show the form for editing the specified resource.
 async function edit(req, res) {}
-
-// Update the specified resource in storage.
-async function update(req, res) {}
 
 // Remove the specified resource from storage.
 async function destroy(req, res) {}

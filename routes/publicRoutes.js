@@ -11,6 +11,9 @@ const passport = require("passport");
 // ...
 publicRouter.get("/", pagesController.showHome);
 
+publicRouter.post("/", unLoggedUserRedirect, tweetController.create);
+
+publicRouter.get("/profile", pagesController.showProfile);
 publicRouter.get("/profile", unLoggedUserRedirect, pagesController.showProfile);
 
 publicRouter.delete("/profile/:id", tweetController.deleteTweet);
@@ -36,5 +39,7 @@ publicRouter.post(
 );
 
 publicRouter.get("/logout", loginController.logout);
+
+publicRouter.patch("/likes/:id", unLoggedUserRedirect, userController.update);
 
 module.exports = publicRouter;

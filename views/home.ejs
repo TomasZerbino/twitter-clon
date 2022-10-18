@@ -40,7 +40,7 @@
     />
   </head>
   <body>
-    <div class="row centerAll h-100 d-flex align-items-center justify-content-center">
+
       <div class="container d-flex flex-wrap homeContainer">
         <%- include('./partials/navbar') %>
 
@@ -77,33 +77,52 @@
                 </div>
               </div>
             </div>
-            <div class="d-flex flex-wrap cardsContainer">
-              <div class="tweetProfileImg">
-                <img src="./img/profileHome.svg" alt="" />
-              </div>
-              <div class="tweet">
-                <div class="d-flex">
-                  <p class="tweetUsername">Pepe Milanga</p>
-                  <p class="tweetNikname">@pepemilanga</p>
-                  <span class="ps-2">. 6h</span>
+            <% for( tweet of tweets){ %>
+              <div class="d-flex flex-wrap cardsContainer">
+                <div class="tweetProfileImg">
+                  <img src="./img/profileHome.svg" alt="" />
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitiaaa aliquid ad
-                  recusandae illum. Doloribus maiores beatae sequi voluptatum veritatis harum magnam
-                  pariatur.
-                </p>
-                <div>
-                  <img src="./img/like.svg" alt="" />
-                  <span>120</span>
+                <div class="tweet">
+                  <div class="d-flex">
+                    <p class="tweetUsername"><%= tweet.author.firstname %> <%= tweet.author.lastname %>  </p>
+                    <p class="tweetNikname">@<%= tweet.author.username %> </p>
+                    <span class="ps-2">. 6h</span>
+                  </div>
+                  <p>
+                    <%= tweet.content %> 
+                  </p>
+                  <div class="d-flex">
+                    <% if(user){ %> 
+                    <% if(tweet.likes.includes(user._id)){ %> 
+                    <form action="likes/<%= tweet._id %>?_method=PATCH" method="post">
+                      <button class="likeBtn">
+                        <img src="./img/like-active.svg" alt="" />
+                      </button>
+                    </form>
+                    <% } %> 
+                    <% if(!tweet.likes.includes(user._id)){ %> 
+                      <form action="likes/<%= tweet._id %>?_method=PATCH" method="post">
+                        <button class="likeBtn">
+                          <img src="./img/like.svg" alt="" />
+                        </button>
+                      </form>
+                      <% } %>
+                    <% } %> 
+                    <% if(!user){ %> 
+                      <img src="./img/like.svg" alt="" />
+                    <% } %> 
+                    <span class="ps-1"><%= tweet.likes.length %> </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            <% } %> 
+
+          </div> 
         </section>
 
         <%- include('./partials/sidebar') %>
       </div>
-    </div>
+
 
     <!-- JS de Bootstrap -->
     <script
