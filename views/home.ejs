@@ -49,8 +49,17 @@
             <div class="cardsContainer">
               <h1 class="homeTitle">Home</h1>
               <div class="d-flex">
-                <div class="homeProfileImg">
-                  <img class="" src="./img/profileHome.svg" alt="" />
+                <div class="">
+                  <img 
+                  width="52"
+                  height="52"
+                  class="rounded-circle"
+                  <% if (!user.avatar) { %> 
+                  src='img/profileHome.svg' 
+                  <% } else { %> 
+                  src="<%= user.avatar %>" 
+                  <% } %>
+                    />
                 </div>
                 <div class="form-floating">
                   <textarea

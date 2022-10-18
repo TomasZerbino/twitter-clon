@@ -125,7 +125,11 @@
           data-bs-content="<a class='text-danger' href='/logout'>Logout @<%= user.username %></a>"
         >
           <img
-            src="https://github.com/mdo.png"
+          <% if (!user.avatar) { %>
+            src='img/profileHome.svg'
+            <% } else { %> 
+            src="<%= user.avatar %>"
+            <% } %> 
             alt="avatar"
             width="45"
             height="45"
