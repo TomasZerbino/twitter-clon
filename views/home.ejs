@@ -50,13 +50,16 @@
                   <div class="homeProfileImg">
                       <img class="" src="./img/profileHome.svg" alt="">
                   </div>
-                  <div class="form-floating">
-                      <textarea class="form-control tweetTextarea mx-1" placeholder="a" id="floatingTextarea2" style="height: 100px"></textarea>
-                      <label for="floatingTextarea2" style="color: #647788;">What's happening?</label>
-                  </div>
-                  <div class="btnTweet">
-                      <button>Tweet</button>
-                  </div>
+                  <form class="d-flex" action="/" method="post">
+                    <div class="form-floating">
+                        <textarea class="form-control tweetTextarea mx-1" placeholder="a" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2" style="color: #647788;">What's happening?</label>
+                    </div>
+                    <div class="btnTweet">
+                        <button type="submit">Tweet</button>
+                    </div>
+                  </form>
+
               </div>
           </div>
           <div class="d-flex flex-wrap cardsContainer">

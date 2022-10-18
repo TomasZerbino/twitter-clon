@@ -8,15 +8,20 @@ const methodOverride = require("method-override");
 const app = express();
 const flash = require("connect-flash");
 const passport = require("./config/passport-local");
-const session = require('express-session')
+const session = require("express-session");
 
-passport(app)
+passport(app);
 
 app.use(flash());
-app.use(session({secret: "something",
-                  cookie: { maxAge: 60000 },
-                  resave: true,
-                  saveUninitialized: true,}))
+
+app.use(
+  session({
+    secret: "987654",
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

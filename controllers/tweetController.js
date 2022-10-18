@@ -1,5 +1,5 @@
 const Tweet = require("../models/Tweet");
-
+const User = require("../models/Tweet");
 // Display a listing of the resource.
 async function index(req, res) {}
 
@@ -7,7 +7,9 @@ async function index(req, res) {}
 async function show(req, res) {}
 
 // Show the form for creating a new resource
-async function create(req, res) {}
+async function create(req, res) {
+  console.log(req.user);
+}
 
 // Store a newly created resource in storage.
 async function store(req, res) {}

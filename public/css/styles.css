@@ -225,7 +225,7 @@ i{
     color: #ffffff;
   }
   
-  @media (max-width: 1198px) {
+  @media (max-width: 1200px) {
     .card{
       display: none;
     }
@@ -552,7 +552,7 @@ i{
     }
 }
 
-@media(max-width: 1199px){
+@media(max-width: 1200px){
     .homeContainer{
         justify-content: center;
     }
