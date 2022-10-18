@@ -16,6 +16,7 @@ module.exports = async () => {
     const tweet = new Tweet({
       content: faker.lorem.sentence(5),
       author: randomUser,
+      createdAt: faker.date.recent(10)
     });
 
     for (let i = 0; i < qtyLikes; i++) {

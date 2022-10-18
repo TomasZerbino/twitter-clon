@@ -12,6 +12,8 @@ publicRouter.get("/", pagesController.showHome);
 
 publicRouter.get("/profile", unLoggedUserRedirect, pagesController.showProfile);
 
+publicRouter.delete("/profile/:id", tweetController.deleteTweet)
+
 publicRouter.get("/register", userController.register);
 
 publicRouter.post("/register", userController.store);

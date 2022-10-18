@@ -1,7 +1,10 @@
 const Tweet = require("../models/Tweet");
 
 // Display a listing of the resource.
-async function index(req, res) {}
+async function deleteTweet(req, res) {
+  const tweet = await Tweet.findByIdAndDelete(req.params.id)
+  res.redirect("back")
+}
 
 // Display the specified resource.
 async function show(req, res) {}
@@ -25,7 +28,7 @@ async function destroy(req, res) {}
 // ...
 
 module.exports = {
-  index,
+  deleteTweet,
   show,
   create,
   store,
