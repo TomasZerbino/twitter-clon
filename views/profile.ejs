@@ -27,7 +27,9 @@
     />
 
     <!-- CSS Propio -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <!-- CSS de fonts -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,54 +39,67 @@
       rel="stylesheet"
     />
   </head>
-<body>
+  <body>
     <div class="container d-flex flex-wrap homeContainer">
+      <%- include('./partials/navbar') %>
 
-    <%- include('./partials/navbar') %> 
-
-        <div class="followContainer">
-            <div >
-                <div class="user">
-                    <i class="fa-solid fa-arrow-left-long"></i>
-                    <span class="d-flex flex-column">
-                        <small class="userName"><%= %> </small>
-                        <small>@princesaleia</small>
-                    </span>
-                </div>
-                <div class="divFollow">
-                    <button>Followers</button>
-                    <button>Following</button>
-                </div>       
-        <div class="homeCenterContainer">
-           <div class="profileBanner"></div> 
-           <div class="profileInfo">
-            <div class="witheBorder"></div>
-            <div class="ProfileImg">
-                <img src="./img/sheli.jpg" alt="">
+      <div class="homeCenterContainer">
+        <div class="profileBanner"></div>
+        <div class="profileInfo">
+          <div class="witheBorder"></div>
+          <div class="ProfileImg">
+            <img src="./img/sheli.jpg" alt="" />
+          </div>
+          <div class="profileFollowBtn">
+            <button>Follow</button>
+          </div>
+          <div>
+            <h1 class="fs-4 fw-bolder m-0"><%=user.firstname%> <%=user.lastname%></h1>
+            <div class="d-flex justify-content-between">
+              <div>
+                <p>@<%=user.username%></p>
+              </div>
+              <div class="d-flex">
+                <p class="follows"><span><%=user.following.length%></span> Following</p>
+                <p class="follows"><span><%=user.followers.length%></span> Followers</p>
+              </div>
             </div>
-            <div class="profileFollowBtn">
-                <button>Follow</button>
+          </div>
+          <p class="fw-bolder">Tweets</p>
+          <% for(tweet of tweets){%> 
+          <div class="tweet m-4">
+            <div class="d-flex">
+              <p class="tweetUsername"><%=user.firstname%> <%=user.lastname%> </p>
+              <p class="tweetNikname">@<%=user.username%></p>
             </div>
-            <div>
-                <h1 class="fs-4 fw-bolder m-0">Sheldon Cooper</h1>
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <p>@bazinga73</p>
-                    </div>
-                    <div class="d-flex">
-                        <p class="follows"><span >33</span> Following</p>
-                        <p class="follows"><span >137</span> Followers</p>
-                    </div>
-                </div>
+            <p>
+                <%=tweet.content%>
+            </p>
+            <div class="d-flex align-item-center justify-content-between">
+              <span class="d-flex">
+                  <img class="ml-2" src="./img/like.svg" alt="" />
+                  <small class="fs-6 m-1 text-danger"><%=tweet.likes.length%></small>
+              </span>
+              <span>
+                <small class="p-1"><%=tweet.createdAt.toLocaleDateString()%></small>
+                <form action="/profile/<%= tweet._id %>?_method=DELETE" method="post">
+                  <button class="likeBtn">
+                    <i class="fa-solid fa-trash text-danger"></i>
+                  </button>
+                </form>
+              </span>
             </div>
-            <p class="fw-bolder">Tweets</p>
-            <div class="tweetsUnderline"></div>
-           </div>
+          </div>
+          <% } %> 
         </div>
-    <%- include('./partials/sidebar') %> 
-
+      </div>
+      <%- include('./partials/sidebar') %>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> 
-</body>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

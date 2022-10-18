@@ -3,6 +3,7 @@ const publicRouter = express.Router();
 const userController = require("../controllers/userController");
 const pagesController = require("../controllers/pagesController");
 const loginController = require("../controllers/loginController");
+const tweetController = require("../controllers/tweetController");
 const loggedUserRedirect = require("../middlewares/redirectLoggedUser");
 const passport = require("passport");
 
@@ -11,6 +12,8 @@ const passport = require("passport");
 publicRouter.get("/", pagesController.showHome);
 
 publicRouter.get("/profile", pagesController.showProfile);
+
+publicRouter.delete("/profile/:id", tweetController.deleteTweet)
 
 publicRouter.get("/register", userController.register);
 
