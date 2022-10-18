@@ -1,6 +1,7 @@
 const { faker } = require("@faker-js/faker");
 const User = require("../models/User");
 const { mongoose } = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 faker.locale = "es";
 
@@ -9,24 +10,25 @@ module.exports = async () => {
   const users = [];
 
   for (let i = 0; i < 20; i++) {
-    const user = new User ({
+    const hashedPassword = await bcrypt.hash("1234", 10);
+    const user = new User({
       firstname: faker.name.firstName(),
       lastname: faker.name.lastName(),
       email: faker.internet.email(),
       username: faker.internet.userName(),
-      password: 1234,
+      password: hashedPassword,
       bio: faker.lorem.paragraphs(),
     });
-    users.push(user)
+    users.push(user);
   }
 
-  for(let i = 0; i < users.length; i++ ){
-    let random = faker.datatype.number({min:0,max:users.length-1});
-    while( random === i ){
-      random = faker.datatype.number({min:0,max:users.length-1})
+  for (let i = 0; i < users.length; i++) {
+    let random = faker.datatype.number({ min: 0, max: users.length - 1 });
+    while (random === i) {
+      random = faker.datatype.number({ min: 0, max: users.length - 1 });
     }
-    users[i].following.push(users[random]._id)
-    users[random].followers.push(users[i]._id)
+    users[i].following.push(users[random]._id);
+    users[random].followers.push(users[i]._id);
   }
 
   await User.insertMany(users);

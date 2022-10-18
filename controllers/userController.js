@@ -1,10 +1,8 @@
 const User = require("../models/User");
 const flash = require("connect-flash");
+const bcrypt = require("bcryptjs");
 
 // Display a listing of the resource.
-async function login(req, res) {
-  res.render("login");
-}
 
 async function register(req, res) {
   res.render("register");
@@ -15,16 +13,17 @@ async function show(req, res) {}
 
 // Show the form for creating a new resource
 async function create(req, res) {
-
   const userAutentication = await User.findOne({ email: req.body.email });
-  console.log(userAutentication);
+
   if (!userAutentication) {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
     const userCreated = await User.create({
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       email: req.body.email,
       username: req.body.username,
-      password: req.body.password,
+      password: hashedPassword,
     });
     if (userCreated) {
       req.login(userCreated, function () {
@@ -55,7 +54,7 @@ async function destroy(req, res) {}
 module.exports = {
   // index,
   register,
-  login,
+
   show,
   create,
   store,
