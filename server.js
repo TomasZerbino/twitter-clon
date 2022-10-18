@@ -6,7 +6,7 @@ const { dbInitialSetup } = require("./dbInitialSetup");
 const APP_PORT = process.env.APP_PORT;
 const methodOverride = require("method-override");
 const app = express();
-const flash = require("connect-flash");
+const flash = require("express-flash");
 const passport = require("./config/passport-local");
 const session = require("express-session");
 

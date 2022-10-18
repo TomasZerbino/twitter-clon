@@ -77,15 +77,15 @@
 /* TAMAÑO MOBILE */
 
 @media (max-width: 991px) {
-  .hideOver1920 {
+  .hideOver1298 {
     display: none;
   }
-  .hideless1920 {
+  .hideless1298 {
     display: none;
   }
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1297px) {
   .btnNavBar2 {
     border-radius: 50px;
     margin-top: 1.8rem;
@@ -97,7 +97,7 @@
     padding-bottom: 1rem;
   }
 
-  .hideLess1920 {
+  .hideLess1298 {
     display: none;
   }
 
@@ -125,7 +125,7 @@
 }
 
 /* TAMAÑO TABLET */
-@media (min-width: 1920px) {
+@media (min-width: 1298px) {
   .btnNavBar {
     border-radius: 45px;
     margin-top: 1.8rem;
@@ -142,7 +142,7 @@
     margin-left: 20rem;
   }
 
-  .hideOver1920 {
+  .hideOver1298 {
     display: none;
   }
 

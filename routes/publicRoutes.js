@@ -28,8 +28,9 @@ publicRouter.post(
   passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/login",
+    failureFlash: true,
   }),
-// loginController.login
+  // loginController.login
 );
 
 publicRouter.get("/logout", loginController.logout);
