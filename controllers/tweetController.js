@@ -1,10 +1,10 @@
-const { pluralize } = require("mongoose");
 const Tweet = require("../models/Tweet");
 const User = require("../models/Tweet");
 // Display a listing of the resource.
+
 async function deleteTweet(req, res) {
-  const tweet = await Tweet.findByIdAndDelete(req.params.id)
-  res.redirect("back")
+  const tweet = await Tweet.findByIdAndDelete(req.params.id);
+  res.redirect("back");
 }
 
 // Display the specified resource.
