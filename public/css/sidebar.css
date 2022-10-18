@@ -124,8 +124,8 @@
   }
 }
 
-@media (max-width: 1298px) {
-  .hideLess1298 {
+@media (max-width: 1020px) {
+  .hideLess1020 {
     display: none;
   }
 }

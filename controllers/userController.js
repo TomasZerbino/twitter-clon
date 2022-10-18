@@ -1,5 +1,4 @@
 const User = require("../models/User");
-const flash = require("connect-flash");
 const bcrypt = require("bcryptjs");
 
 // Display a listing of the resource.
@@ -14,8 +13,9 @@ async function show(req, res) {}
 // Show the form for creating a new resource
 async function create(req, res) {
   const userAutentication = await User.findOne({ email: req.body.email });
+  const passwordAutentication = req.body.password === req.body.confirmPassword;
 
-  if (!userAutentication) {
+  if (!userAutentication & passwordAutentication) {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
     const userCreated = await User.create({
@@ -31,8 +31,13 @@ async function create(req, res) {
       });
     }
   } else {
-    req.flash("user", "Este usuario ya existe");
-    res.redirect("back");
+    if (!passwordAutentication) {
+      req.flash("user", "⚠️  Password confirmation doesn't match Password!");
+      res.redirect("back");
+    } else {
+      req.flash("user", "⚠️  User already exists!");
+      res.redirect("back");
+    }
   }
 }
 
