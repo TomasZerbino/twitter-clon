@@ -13,6 +13,7 @@ const session = require("express-session");
 passport(app);
 
 app.use(flash());
+<<<<<<< HEAD
 
 app.use(
   session({
@@ -22,6 +23,16 @@ app.use(
   }),
 );
 
+=======
+app.use(
+  session({
+    secret: "something",
+    cookie: { maxAge: 60000 },
+    resave: true,
+    saveUninitialized: true,
+  }),
+);
+>>>>>>> 1c763aeacba4b1626f4eb2cff82e2d59dd6df2cb
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -30,7 +41,7 @@ app.set("view engine", "ejs");
 
 routes(app);
 
-/* dbInitialSetup(); */
+// dbInitialSetup();
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);

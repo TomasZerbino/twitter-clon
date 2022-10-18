@@ -1,8 +1,8 @@
 /* Colocar aquí CSS "propio" */
-*{
-    margin: 0;
-    padding: 0;
-    /* font-family: inter; */
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: inter; */
 }
 
 /* .formContainer{
@@ -11,74 +11,73 @@
     display: flex;
 } */
 
-.section{ 
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    background-color: #074874;
-    justify-content: center;
-    align-items: center
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #074874;
+  justify-content: center;
+  align-items: center;
 }
 
-.twitterIcon{
-    color: white;
-    font-size: 4rem;
-    margin: 4rem;
+.twitterIcon {
+  color: white;
+  font-size: 4rem;
+  margin: 4rem;
 }
 
-.leftContainer{
-    max-width: 650px;
-    width: auto;
-    background-color: #4db1f5;
-    height: 57rem;
-    width: 40rem;
-    border-radius: 1rem 0 0 1rem;
+.leftContainer {
+  max-width: 650px;
+  width: auto;
+  background-color: #4db1f5;
+  height: 57rem;
+  width: 40rem;
+  border-radius: 1rem 0 0 1rem;
 }
-
 
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    /* width: 90%; */
-    max-width: 650px;   
-    padding: 7rem;
-    border-radius: 0 1rem 1rem 0;
-    height: 57rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  /* width: 90%; */
+  max-width: 650px;
+  padding: 7rem;
+  border-radius: 0 1rem 1rem 0;
+  height: 57rem;
 }
 
-.smallSignIn{
-    text-decoration: none;
-    color: black;
+/* .smallSignIn {
+ text-decoration: none;
+  color: black;
+} */
+
+.btnForm {
+  background-color: #2e9ae1;
+  border-radius: 3rem;
+  height: 3rem;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  transition: all 1s;
 }
 
-.btnForm{
-    background-color: #2e9ae1;
-    border-radius: 3rem;
-    height: 3rem;
-    color: white;
-    border: none;
-    font-size: 1.2rem;
-    transition: all 1s;
+.btnForm:hover {
+  background-color: #4db1f5;
+  transform: scale(1.1);
 }
 
-.btnForm:hover{
-    background-color: #4db1f5;
-    transform: scale(1.1);
-}
-
-@media (max-width: 992px){
-    .form{
-        border-radius: 1rem;
-    }
+@media (max-width: 992px) {
+  .form {
+    border-radius: 1rem;
+  }
 }
 
 /* ------------------------------------style de guille ☝🏽 */
 
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
 /* body{
@@ -93,74 +92,75 @@
     width: 40%;
     border: 1px solid rgb(182, 180, 180);
 } */
-.followContainer{
-    width: 600px;
-    margin-left: 31px;
+.followContainer {
+  width: 600px;
+  margin-left: 31px;
 }
-.user{
-    display: flex;
-    margin-top: 1rem;
-    align-items: center;
-}
-
-.userName{
-    font-weight: bold;
-    font-size: 1.5rem;
+.user {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
 }
 
-i{
-    font-size: 1rem ;
-    margin-right: 1rem;
+.userName {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.avatarImg{
-    width: 3rem;
-    border-radius: 9999px;
-    overflow: hidden;
+i {
+  font-size: 1rem;
+  margin-right: 1rem;
 }
 
-.spanAvatar{
-    margin-left: 1rem;
+.avatarImg {
+  width: 3rem;
+  border-radius: 9999px;
+  overflow: hidden;
 }
 
-.divFollow{
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 1rem;
-    font-weight: bold;
-    border-bottom: 1px solid rgb(182, 180, 180);
+.spanAvatar {
+  margin-left: 1rem;
 }
 
-.divFollow button{
-    background-color: white;
-    border: none;
-    font-weight: bold;
+.divFollow {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(182, 180, 180);
 }
 
-.smallUser{
-    font-weight: bold;
+.divFollow button {
+  background-color: white;
+  border: none;
+  font-weight: bold;
 }
 
-.btnActivo{
-    border-bottom: 2px solid #0087e1;
+.smallUser {
+  font-weight: bold;
 }
 
-.btnFollow{
-    background-color: #1D9BF0;
-    color: white;
-    border-radius: 1.2rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    border: none;
-    font-size: 1rem;
+.btnActivo {
+  border-bottom: 2px solid #0087e1;
 }
 
-.btnFollow:hover{
-    background-color: #0087e1;
+.btnFollow {
+  background-color: #1d9bf0;
+  color: white;
+  border-radius: 1.2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.btnFollow:hover {
+  background-color: #0087e1;
 }
 /* -----------------------------------------Following guille  ☝🏽*/
+<<<<<<< HEAD
 .card {
     background: #f7f9f9;
     border-radius: 15px;
@@ -231,6 +231,9 @@ i{
     }
   }
   /* -------------------------------------Sidebar Fran ☝ */
+=======
+
+>>>>>>> 1c763aeacba4b1626f4eb2cff82e2d59dd6df2cb
   .userName {
     display: block;
     font-style: normal;
@@ -489,41 +492,216 @@ i{
     bottom: 0;
 }
 
-.section{ 
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    background-color: #074874;
-    justify-content: center;
-    align-items: center
+/* -------------------------------------Sidebar Fran ☝ */
+
+/* -------------------------------------Navbar Fran ☝ */
+* {
+  box-sizing: border-box;
+  font-family: inter;
+}
+.homeProfileImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50px;
+  background-color: #cad8db;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 3px;
+}
+.homeProfileImg img {
+  width: 1.87rem;
+  height: 2.3rem;
+}
+.tweetTextarea {
+  border: none;
+  font-size: 1.25rem;
+  resize: none;
+  width: 425px;
+  padding: 12px 6px;
+}
+.btnTweet {
+  display: flex;
+  align-items: flex-end;
+}
+.btnTweet button {
+  padding: 9px 16px;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+  background-color: #1d9bf0;
+}
+.homeTitle {
+  font-size: 1.25rem;
+}
+.cardsContainer {
+  padding: 16px 19px;
+  border-bottom: 1px solid #f3f3f3;
+}
+.homeCenterContainer {
+  max-width: 600px;
+  min-height: 100vh;
+  border-left: 1px solid #f3f3f3;
+  border-right: 1px solid #f3f3f3;
+}
+.tweet {
+  width: 500px;
+  margin-left: 17px;
+}
+.tweetUsername {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.tweetNikname {
+  margin-bottom: 4px;
+  color: #647788;
+  padding-left: 5px;
+}
+.tweetProfileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #cad8db;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.tweetProfileImg img {
+  width: 25px;
+  height: 31px;
+}
+.profileBanner {
+  background-color: #1d9bf0;
+  height: 171px;
+}
+.profileInfo {
+  position: relative;
+  height: 202px;
+  border-bottom: 1px solid #f3f3f3;
+  padding: 12px 19px;
+}
+.ProfileImg {
+  width: 132px;
+  height: 132px;
+  overflow: hidden;
+  border-radius: 100px;
+  position: absolute;
+  top: -65px;
+  left: 20px;
+}
+.ProfileImg img {
+  width: 100%;
+}
+.witheBorder {
+  width: 142px;
+  height: 142px;
+  border-radius: 100px;
+  position: absolute;
+  top: -69px;
+  left: 15px;
+  background-color: #ffffff;
+}
+.profileFollowBtn {
+  height: 86px;
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+}
+.profileFollowBtn button {
+  padding: 7px 14px;
+  border: none;
+  background-color: #1d9bf0;
+  border-radius: 50px;
+  color: #ffffff;
+}
+.profileContainer {
+  width: 600px;
+  margin: auto;
+}
+.follows {
+  color: #647788;
+  margin-left: 7px;
+}
+.follows span {
+  font-weight: 700;
+  color: black;
+}
+.tweetsUnderline {
+  position: absolute;
+  width: 56px;
+  height: 4px;
+  background-color: #1d9bf0;
+  bottom: 0;
 }
 
-.twitterIcon{
-    color: white;
-    font-size: 4rem;
-    margin: 4rem;
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #074874;
+  justify-content: center;
+  align-items: center;
 }
 
-.leftContainer{
-    max-width: 650px;
-    width: auto;
-    background-color: #4db1f5;
-    height: 57rem;
-    width: 40rem;
-    border-radius: 1rem 0 0 1rem;
+.twitterIcon {
+  color: white;
+  font-size: 4rem;
+  margin: 4rem;
 }
 
+.leftContainer {
+  max-width: 650px;
+  width: auto;
+  background-color: #4db1f5;
+  height: 57rem;
+  width: 40rem;
+  border-radius: 1rem 0 0 1rem;
+}
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  /* width: 90%; */
+  max-width: 650px;
+  padding: 7rem;
+  border-radius: 0 1rem 1rem 0;
+  height: 57rem;
+}
+
+/* .smallSignIn {
+  text-decoration: none;
+  color: black;
+} */
+
+.btnForm {
+  background-color: #2e9ae1;
+  border-radius: 3rem;
+  height: 3rem;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  transition: all 1s;
+}
+
+.btnForm:hover {
+  background-color: #4db1f5;
+  transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .form {
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .homeContainer {
     justify-content: center;
-    background-color: rgb(255, 255, 255);
-    /* width: 90%; */
-    max-width: 650px;   
-    padding: 7rem;
-    border-radius: 0 1rem 1rem 0;
-    height: 57rem;
+  }
 }
 
 .smallSignIn{
